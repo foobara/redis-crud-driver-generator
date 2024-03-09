@@ -1,13 +1,13 @@
 require_relative "src/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "foobara-rack-connector-generator"
-  spec.version = Foobara::Generators::RackConnectorGenerator::VERSION
+  spec.name = "foobara-redis-crud-driver-generator"
+  spec.version = Foobara::Generators::RedisCrudDriverGenerator::VERSION
   spec.authors = ["Miles Georgi"]
   spec.email = ["azimux@gmail.com"]
 
-  spec.summary = "Generates a Foobara rack_connector"
-  spec.homepage = "https://github.com/foobara/generators-rack-connector-generator"
+  spec.summary = "Generates a Foobara redis_crud_driver"
+  spec.homepage = "https://github.com/foobara/generators-redis-crud-driver-generator"
   spec.license = "MIT"
   spec.required_ruby_version = ">= #{File.read("#{__dir__}/.ruby-version")}"
 

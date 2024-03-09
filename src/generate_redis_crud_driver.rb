@@ -1,16 +1,16 @@
 require "pathname"
 
-require_relative "rack_connector_config"
+require_relative "redis_crud_driver_config"
 
 module Foobara
   module Generators
-    module RackConnectorGenerator
-      class GenerateRackConnector < Foobara::Generators::Generate
+    module RedisCrudDriverGenerator
+      class GenerateRedisCrudDriver < Foobara::Generators::Generate
         class MissingManifestError < RuntimeError; end
 
         possible_error MissingManifestError
 
-        inputs RackConnectorConfig
+        inputs RedisCrudDriverConfig
 
         def execute
           include_non_templated_files
@@ -27,7 +27,7 @@ module Foobara
         attr_accessor :manifest_data
 
         def base_generator
-          Generators::RackConnectorGenerator
+          Generators::RedisCrudDriverGenerator
         end
 
         # TODO: delegate this to base_generator
@@ -39,11 +39,11 @@ module Foobara
         end
 
         def add_initial_elements_to_generate
-          elements_to_generate << rack_connector_config
+          elements_to_generate << redis_crud_driver_config
         end
 
-        def rack_connector_config
-          @rack_connector_config ||= RackConnectorConfig.new(inputs)
+        def redis_crud_driver_config
+          @redis_crud_driver_config ||= RedisCrudDriverConfig.new(inputs)
         end
       end
     end

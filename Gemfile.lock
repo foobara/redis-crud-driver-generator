@@ -34,7 +34,7 @@ GIT
 PATH
   remote: .
   specs:
-    foobara-rack-connector-generator (0.0.1)
+    foobara-redis-crud-driver-generator (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -145,7 +145,7 @@ PLATFORMS
 DEPENDENCIES
   foobara!
   foobara-files-generator!
-  foobara-rack-connector-generator!
+  foobara-redis-crud-driver-generator!
   foobara-rubocop-rules!
   foobara-spec-helpers!
   foobara-util!

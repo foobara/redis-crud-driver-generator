@@ -1,18 +1,18 @@
-RSpec.describe Foobara::Generators::RackConnectorGenerator::WriteRackConnectorToDisk do
+RSpec.describe Foobara::Generators::RedisCrudDriverGenerator::WriteRedisCrudDriverToDisk do
   let(:command) { described_class.new(inputs) }
   let(:outcome) { command.run }
   let(:result) { outcome.result }
   let(:errors) { outcome.errors }
   let(:inputs) do
     {
-      rack_connector_config:,
+      redis_crud_driver_config:,
       output_directory:
     }
   end
-  let(:rack_connector_config) do
+  let(:redis_crud_driver_config) do
     {}
   end
-  let(:output_directory) { "#{__dir__}/../../../tmp/rack_connector_test_suite_output" }
+  let(:output_directory) { "#{__dir__}/../../../tmp/redis_crud_driver_test_suite_output" }
 
   around do |example|
     FileUtils.rm_rf output_directory
@@ -35,7 +35,7 @@ RSpec.describe Foobara::Generators::RackConnectorGenerator::WriteRackConnectorTo
     it "contains base files" do
       expect(outcome).to be_success
 
-      expect(command.paths_to_source_code.keys).to include("boot/rack.rb")
+      expect(command.paths_to_source_code.keys).to include("boot/redis.rb")
     end
 
     it "updates the Gemfile" do
@@ -43,7 +43,7 @@ RSpec.describe Foobara::Generators::RackConnectorGenerator::WriteRackConnectorTo
 
       expect(
         command.paths_to_source_code["Gemfile"]
-      ).to include('gem "foobara-rack-connector", github: "foobara/rack-connector"')
+      ).to include('gem "foobara-redis-crud-driver", github: "foobara/redis-crud-driver"')
     end
   end
 
@@ -51,7 +51,7 @@ RSpec.describe Foobara::Generators::RackConnectorGenerator::WriteRackConnectorTo
     context "with no output directory" do
       let(:inputs) do
         {
-          rack_connector_config:
+          redis_crud_driver_config:
         }
       end
 

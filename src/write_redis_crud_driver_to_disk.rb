@@ -1,19 +1,19 @@
-require_relative "generate_rack_connector"
+require_relative "generate_redis_crud_driver"
 
 module Foobara
   module Generators
-    module RackConnectorGenerator
-      class WriteRackConnectorToDisk < Foobara::Generators::WriteGeneratedFilesToDisk
+    module RedisCrudDriverGenerator
+      class WriteRedisCrudDriverToDisk < Foobara::Generators::WriteGeneratedFilesToDisk
         class << self
           def generator_key
-            "rack-connector"
+            "redis-crud-driver"
           end
         end
 
-        depends_on GenerateRackConnector
+        depends_on GenerateRedisCrudDriver
 
         inputs do
-          rack_connector_config RackConnectorConfig, :required
+          redis_crud_driver_config RedisCrudDriverConfig, :required
           # TODO: should be able to delete this and inherit it
           output_directory :string
         end
@@ -37,9 +37,9 @@ module Foobara
         end
 
         def generate_file_contents
-          # TODO: just pass this in as the inputs instead of the rack_connector??
-          self.paths_to_source_code = run_subcommand!(GenerateRackConnector,
-                                                      rack_connector_config.attributes)
+          # TODO: just pass this in as the inputs instead of the redis_crud_driver??
+          self.paths_to_source_code = run_subcommand!(GenerateRedisCrudDriver,
+                                                      redis_crud_driver_config.attributes)
         end
 
         def run_post_generation_tasks

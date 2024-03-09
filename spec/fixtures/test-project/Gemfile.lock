@@ -50,10 +50,10 @@ GIT
       rubocop-rspec
 
 GIT
-  remote: https://github.com/foobara/rack-connector.git
+  remote: https://github.com/foobara/redis-crud-driver.git
   revision: 78ff61ace804add30060043b663f48e5fc39fa3f
   specs:
-    foobara-rack-connector (0.1.0)
+    foobara-redis-crud-driver (0.1.0)
 
 GIT
   remote: https://github.com/foobara/spec-helpers.git
@@ -187,7 +187,7 @@ DEPENDENCIES
   foobara-foob!
   foobara-organization-generator!
   foobara-rubocop-rules!
-  foobara-rack-connector!
+  foobara-redis-crud-driver!
   foobara-spec-helpers!
   foobara-util!
   guard-rspec

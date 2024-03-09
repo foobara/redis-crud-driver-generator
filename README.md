@@ -3,7 +3,7 @@
 TODO: Delete this and the text below, and describe your gem
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library
-into a gem. Put your Ruby code in the file `lib/foobara/rack_connector_generator`. To experiment with that
+into a gem. Put your Ruby code in the file `lib/foobara/redis_crud_driver_generator`. To experiment with that
 code,
 run `bin/console` for an interactive prompt.
 
@@ -44,7 +44,7 @@ push git commits and the created tag, and push the `.gem` file to [rubygems.org]
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub
-at https://github.com/[USERNAME]/foobara-rack-connector-generator.
+at https://github.com/[USERNAME]/foobara-redis-crud-driver-generator.
 
 ## License
 

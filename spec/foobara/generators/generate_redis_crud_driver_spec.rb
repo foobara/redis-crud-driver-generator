@@ -1,4 +1,4 @@
-RSpec.describe Foobara::Generators::RackConnectorGenerator::GenerateRackConnector do
+RSpec.describe Foobara::Generators::RedisCrudDriverGenerator::GenerateRedisCrudDriver do
   let(:inputs) do
     {}
   end
@@ -6,9 +6,9 @@ RSpec.describe Foobara::Generators::RackConnectorGenerator::GenerateRackConnecto
   let(:outcome) { command.run }
   let(:result) { outcome.result }
 
-  it "generates a rack_connector" do
+  it "generates a redis_crud_driver" do
     expect(outcome).to be_success
 
-    expect(result.keys).to include("boot/rack.rb")
+    expect(result.keys).to include("boot/redis.rb")
   end
 end

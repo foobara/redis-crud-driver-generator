@@ -3,8 +3,8 @@ default_serializers = [
   Foobara::CommandConnectors::Serializers::JsonSerializer
 ]
 
-rack_connector = Foobara::CommandConnectors::Http::Rack.new(default_serializers:)
+redis_crud_driver = Foobara::CommandConnectors::Http::Rack.new(default_serializers:)
 
-# rack_connector.connect(SomeCommandOrOrgOrDomain, suffix: "Atom", atomic_entities: true)
+# redis_crud_driver.connect(SomeCommandOrOrgOrDomain, suffix: "Atom", atomic_entities: true)
 
-RACK_CONNECTOR = rack_connector
+RACK_CONNECTOR = redis_crud_driver
