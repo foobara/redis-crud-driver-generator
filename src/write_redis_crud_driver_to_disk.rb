@@ -13,7 +13,7 @@ module Foobara
         depends_on GenerateRedisCrudDriver
 
         inputs do
-          redis_crud_driver_config RedisCrudDriverConfig, :required
+          redis_crud_driver_config RedisCrudDriverConfig, default: RedisCrudDriverConfig.new
           # TODO: should be able to delete this and inherit it
           output_directory :string
         end
