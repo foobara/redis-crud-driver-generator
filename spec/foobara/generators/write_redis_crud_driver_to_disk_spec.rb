@@ -45,6 +45,20 @@ RSpec.describe Foobara::Generators::RedisCrudDriverGenerator::WriteRedisCrudDriv
         command.paths_to_source_code["Gemfile"]
       ).to include('gem "foobara-redis-crud-driver", github: "foobara/redis-crud-driver"')
     end
+
+    context "when .env.test.local already exists" do
+      before do
+        File.write("#{output_directory}/.env.test.local", "FOO=bar")
+      end
+
+      it "succeeds and updates existing .env.test.local" do
+        expect(outcome).to be_success
+
+        expect(
+          File.read("#{output_directory}/.env.test.local")
+        ).to eq("FOO=bar\n# REDIS_URL=redis://localhost:6379/3\n")
+      end
+    end
   end
 
   describe "#output_directory" do

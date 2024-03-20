@@ -8,7 +8,9 @@ module Foobara
               case manifest
               when RedisCrudDriverConfig
                 [
-                  Generators::GemfileGenerator
+                  Generators::GemfileGenerator,
+                  Generators::EnvDevelopmentLocalGenerator,
+                  Generators::EnvTestLocalGenerator
                 ]
               else
                 # :nocov:
