@@ -9,6 +9,6 @@ RSpec.describe Foobara::Generators::RedisCrudDriverGenerator::GenerateRedisCrudD
   it "generates a redis_crud_driver" do
     expect(outcome).to be_success
 
-    expect(result.keys).to include("boot/redis.rb")
+    expect(result.keys).to include("boot/crud.rb")
   end
 end
