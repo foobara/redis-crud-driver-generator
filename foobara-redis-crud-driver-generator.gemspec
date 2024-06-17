@@ -8,7 +8,11 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Generates a Foobara redis_crud_driver"
   spec.homepage = "https://github.com/foobara/generators-redis-crud-driver-generator"
-  spec.license = "MIT"
+
+  # Equivalent to SPDX License Expression: Apache-2.0 OR MIT
+  spec.license = "Apache-2.0 OR MIT"
+  spec.licenses = ["Apache-2.0", "MIT"]
+
   spec.required_ruby_version = ">= #{File.read("#{__dir__}/.ruby-version")}"
 
   spec.metadata["homepage_uri"] = spec.homepage
@@ -21,7 +25,9 @@ Gem::Specification.new do |spec|
   spec.files = Dir[
     "lib/**/*",
     "src/**/*",
-    "LICENSE.txt"
+    "LICENSE*.txt",
+    "README.md",
+    "CHANGELOG.md"
   ]
 
   spec.require_paths = ["lib"]
