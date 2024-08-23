@@ -1,3 +1,5 @@
+require "find"
+
 require_relative "version"
 
 Gem::Specification.new do |spec|
@@ -28,7 +30,8 @@ Gem::Specification.new do |spec|
     "LICENSE*.txt",
     "README.md",
     "CHANGELOG.md"
-  ]
+    # NOTE: We can't just do "templates/**/*" because there can be hidden files/directories which are skipped
+  ] + Find.find("templates/").select { |f| File.file?(f) }
 
   spec.require_paths = ["lib"]
   spec.metadata["rubygems_mfa_required"] = "true"
