@@ -21,6 +21,8 @@ Gem::Specification.new do |spec|
     "LICENSE.txt"
   ]
 
+  spec.add_dependency "foobara-files-generator"
+
   spec.require_paths = ["lib"]
   spec.metadata["rubygems_mfa_required"] = "true"
 end

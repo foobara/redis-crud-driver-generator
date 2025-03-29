@@ -43,7 +43,7 @@ RSpec.describe Foobara::Generators::RedisCrudDriverGenerator::WriteRedisCrudDriv
 
       expect(
         command.paths_to_source_code["Gemfile"]
-      ).to include('gem "foobara-redis-crud-driver", github: "foobara/redis-crud-driver"')
+      ).to include('gem "foobara-redis-crud-driver"')
     end
 
     context "when .env.test.local already exists" do
