@@ -1,3 +1,7 @@
+## [0.1.0] - 2025-08-22
+
+- Mark as compatible with newer versions of foobara-files-generator
+
 ## [0.0.4] - 2025-03-28
 
 - Stop generating github: lines in Gemfile
